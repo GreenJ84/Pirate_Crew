@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import PirateList from '../components/PirateList';
+import NavBar from '../components/NavBar';
 
 const Main = () => {
     const [pirates, setPirates] = useState([]);
@@ -18,6 +19,7 @@ const Main = () => {
 
     return (
     <>
+        <NavBar route='/new' link='Add Pirate'/>
         <PirateList removeFromDom={removeFromDom} pirates={ pirates } />
     </>
     )
