@@ -1,6 +1,28 @@
 import React from 'react';
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import NavBar from './NavBar';
+
+const formStyle = {
+    backgroundColor: 'grey',
+    width: '70%',
+    margin: '3% 15%',
+    borderRadius: '60px',
+    padding: '4%',
+    height: '600px'
+}
+const formItem = {
+    margin: '4% 0px 2% 0px',
+}
+const checkbox ={
+    margin: '2% 0px 0px 0px'
+}
+const button = {
+    margin: '8% 4% 4%',
+    backgroundColor: 'lightblue',
+    width: '25%',
+    height: '6%'
+}
 
 const PirateForm = (props) => {
     const { pName, url, chests, pos, phrase, leg, eye, hand, type, onSubmit } = props;
@@ -59,31 +81,31 @@ const PirateForm = (props) => {
 
     return (
         <>
+            <NavBar route='/' link='Crew Board' />
             <div>
                 <h1>{type} Pirate</h1>
-                <Link to='/'> Crew Board </Link>
             </div>
-            <form onSubmit={ submitHandler }>
+            <form style={formStyle} onSubmit={ submitHandler }>
                 <div>
-                <p>
+                <p style={formItem}>
                     <label>Pirate Name:</label><br/>
                     <input type='text' onChange= { e => setPirate_name(e.target.value) } value={ pirate_name } required/>
                 </p>
-                <p>
+                <p style={formItem}>
                     <label>Image URL:</label><br/>
                     <input type='text' onChange= { e => setImage_url(e.target.value) } value={ image_url } required/>
                 </p>
-                <p>
+                <p style={formItem}>
                     <label># of chests:</label><br/>
                     <input type='number' onChange= { e => setNum_of_chests(e.target.value) } value={ num_of_chests } min='0' required/>
                 </p>
-                <p>
+                <p style={formItem}>
                     <label>Pirate Catch Phrase:</label><br/>
                     <input type='text' onChange= { e => setCatch_phrase(e.target.value) } value={ catch_phrase } required/>
                 </p>
                 </div>
                 <div>
-                <p>
+                <p style={formItem}>
                     <label>Position:</label><br/>
                     <select onChange= { e => setPosition(e.target.value) } value={ position } required>
                         <option value='' disabled>Please Choose</option>
@@ -95,20 +117,20 @@ const PirateForm = (props) => {
                     </select>
                 </p>
                     <div>
-                        <input type="checkbox"   onClick = { (e) => changeLeg(pegLeg) } checked={ pegLeg } />
+                        <input style={checkbox} type="checkbox"   onClick = { (e) => changeLeg(pegLeg) } checked={ pegLeg } />
                         <label> Peg Leg</label><br/>
 
-                        <input type="checkbox"  checked={ eyePatch } onChange={ (e) => changeEye( eyePatch ) } />
+                        <input style={checkbox} type="checkbox"  checked={ eyePatch } onChange={ (e) => changeEye( eyePatch ) } />
                         <label> Eye Patch</label><br/>
 
-                        <input type="checkbox"  checked={ hookHand } onChange={ e => changeHand( hookHand ) } />
+                        <input style={checkbox} type="checkbox"  checked={ hookHand } onChange={ e => changeHand( hookHand ) } />
                         <label> Hook Hand</label><br/>
                     </div>
 
                 </div>
 
-            <input type='button' value='Cancel' onClick={ returnHome }/>
-            <input type='Submit' value={type+' Pirate'}/>
+            <input  style={button} type='button' value='Cancel' onClick={ returnHome }/>
+            <input style={button} type='Submit' value={type+' Pirate'}/>
             </form>
         </>
         )
