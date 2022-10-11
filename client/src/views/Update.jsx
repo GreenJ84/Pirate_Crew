@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useParams, useNavigate } from 
 'react-router-dom'
 import PirateForm from '../components/PirateForm'
+import NavBar from '../components/NavBar';
 
 const Update = () => {
     const { id } = useParams();
