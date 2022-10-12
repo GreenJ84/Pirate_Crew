@@ -10,7 +10,7 @@
 
 ### Summary
 
-With this application you are able to. build collections of users in a 'Priate Crew'. Give your crew members attributes like: an eye patch, a peg leg, or a hook hand! Go wild and bring all your closest 'mates and enjoy the fun! But don't forget their catch phrases!
+With this application you are able to build collections of users into a 'Priate Crew'. Give your crew members attributes like: an eye patch, a peg leg, or a hook hand! Go wild and bring all your closest 'mates and enjoy the fun! But don't forget their catch phrases!
 
 - This project is a running log of my closest mates, documented for myself. 
   - In the future I will deploy with Vercel to let the community become a part of my Crew!!
